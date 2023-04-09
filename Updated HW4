@@ -1,0 +1,19 @@
+1. makeblastdb -in mystery_transcripts.fasta -dbtype nucl -out mysterytranscriptsdb
+
+2. makeblastdb -in mystery_proteins.fasta -dbtype prot -out mysteryproteinsdb
+
+3. blastn -query /Users/jen/Desktop/mystery_nucleotide_query.fasta -task megablast -db mysterytranscriptsdb -out blast_myresults.txt -evalue 1e-3 -max_hsps 5 -outfmt 7
+
+4. T010027234997    
+
+5. awk '$3>=90' /Users/jen/Desktop/blast_myresults.txt |awk '{print$2}' > most_similar.txt
+
+6. blastp -query mystery_protein_query.fasta -db mysteryproteinsdb -evalue 1e-5 -max_hsps 15 -outfmt 7 -out blast_myresults123.txt
+
+7. P010027090796, P010027090798, P010027073865, P010027077695
+
+8. Coffea arabica 
+
+9. Gardenia
+
+10. Putative catalase 
